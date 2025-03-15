@@ -77,6 +77,7 @@ public class TransactionService {
 
                 // 存入主缓存
                 transaction.setTransDate(DateUtil.formatDateTime(new Date()));
+                transaction.setTransactionId(transactionId);
                 mainCache.put(transactionId, transaction);
 
                 // 更新用户索引
