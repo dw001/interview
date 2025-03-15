@@ -1,20 +1,20 @@
-# Ê¹ÓÃ¹Ù·½ Ubuntu »ù´¡¾µÏñ£¨ÇáÁ¿ÇÒ¼æÈÝÐÔºÃ£©
+# Ê¹ï¿½Ã¹Ù·ï¿½ Ubuntu ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½ÔºÃ£ï¿½
 FROM ubuntu:22.04
 
-# °²×°±ØÒª¹¤¾ß£¨wgetÓÃÓÚÏÂÔØJDK£¬vim¿ÉÑ¡£©
+# ï¿½ï¿½×°ï¿½ï¿½Òªï¿½ï¿½ï¿½ß£ï¿½wgetï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JDKï¿½ï¿½vimï¿½ï¿½Ñ¡ï¿½ï¿½
 RUN apt-get update && apt-get install -y wget vim
 
-# ÏÂÔØ²¢°²×° JDK 21
+# ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½×° JDK 21
 RUN wget https://download.java.net/java/GA/jdk21/fd2272bbf8e04c3dbaee13770090416c/35/GPL/openjdk-21_linux-x64_bin.tar.gz && \
     tar -xzf openjdk-21_linux-x64_bin.tar.gz -C /usr/local/ && \
     rm openjdk-21_linux-x64_bin.tar.gz
 
-# ÉèÖÃ»·¾³±äÁ¿
+# ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ENV JAVA_HOME /usr/local/jdk-21
 ENV PATH $JAVA_HOME/bin:$PATH
 
-# ¸´ÖÆ Java Ó¦ÓÃ JAR °üµ½ÈÝÆ÷£¨¼ÙÉè JAR °üÃûÎª app.jar£©
+# ï¿½ï¿½ï¿½ï¿½ Java Ó¦ï¿½ï¿½ JAR ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JAR ï¿½ï¿½ï¿½ï¿½Îª app.jarï¿½ï¿½
 COPY target/springInterview-1.0-SNAPSHOT.jar /app/test.jar
 
-# Ö¸¶¨ÈÝÆ÷Æô¶¯ÃüÁî
+# Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CMD ["java", "-jar", "/app/test.jar"]

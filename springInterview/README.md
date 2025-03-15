@@ -15,6 +15,8 @@
 
     支持按流水号，用户号，商户的多种查询方式
 
-   
+other目录的内容
+其中dockerfile是用于docker部署用的
+interview-qry.jmx 是用jmeter进行压测时的脚本
     
    
